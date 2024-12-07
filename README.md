@@ -23,5 +23,20 @@ To specify your own velocity field rather than the default Burgers vortex:
 1. Following `burgersVortex.m` as an example, write a velocity function that forward-propagates (e.g., using `ODE45`) a set of (*x,y,z*) positions according to a velocity **u**(*x,y,z*). The easiest way to do this is probably to create a copy of `burgersVortex.m` and modify it. 
 2. Pass a function handle to your velocity function as an input argument to `makeImages()`:
 ```matlab
-  makeImage('velocityFunction', @burgersVortex);
+  makeImages('velocityFunction', @burgersVortex);
 ```
+
+## Camera Parameters
+Specify camera intrinsic parameters by modifying the file `defaultCamera.m`. Currently only the pinhole camera model is supported.
+Specify the extrinsic parameters of a set of cameras by modifying the file `defaultCameraArrangement.m`, or creating your own function to output a struct whose elements are `camera` structs, and passing it to `makeImages` using the `cameras` input variable:
+
+```matlab
+% Using defaultCameraArrangement.m:
+cameras = defaultCameraArrangement();
+makeImages('cameras', cameras);
+
+% Specifying your own camera arrangement function:
+myCameras = myCameraArrangementFun();
+makeImages('cameras', myCameras) 
+```
+
