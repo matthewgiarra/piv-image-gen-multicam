@@ -1,7 +1,7 @@
 # Multi-Camera PIV Image Generation
 Generate artificial images for multi-camera particle image velocimetry.
 
-<img src="https://github.com/user-attachments/assets/9e6117a0-6c7c-4c42-a56a-30d9aed01769" width="500" height="500"/>
+![multiCamImage](https://github.com/user-attachments/assets/9e6117a0-6c7c-4c42-a56a-30d9aed01769)
 
 ## Usage 
 This example generates multi-camera images of a Burgers vortex.
